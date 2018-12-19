@@ -1,11 +1,12 @@
 const db = require('../_db')
-const Puppy = require('./puppy')
+const User = require('./user')
+const Toy = require('./toy')
 
-Puppy.hasMany(Toy)
-Toy.belongsTo(Puppy)
+User.hasMany(Toy)
+Toy.belongsTo(User)
 
 module.exports = {
   db,
-  Puppy,
+  User,
   Toy
 }

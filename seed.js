@@ -1,21 +1,21 @@
 const { db } = require('./server/db/models')
 const { green, red } = require('chalk')
-const Aircraft = require('./server/db/models/aircraft')
-const Country = require('./server/db/models/country')
+const User = require('./server/db/models/user')
+// const Country = require('./server/db/models/country')
 
 const seed = async () => {
   await db.sync({ force: true })
 
-  await Country.bulkCreate([
-    {
-      name: 'U.S.A',
-      GFI: 0,
-      flagURL:
-        'https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png'
-    }
-  ])
+  // await Country.bulkCreate([
+  //   {
+  //     name: 'U.S.A',
+  //     GFI: 0,
+  //     flagURL:
+  //       'https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png'
+  //   }
+  // ])
 
-  await Aircraft.bulkCreate([
+  await User.bulkCreate([
     {
       make: 'Curtiss Falcon',
       model: 'A-3',
